@@ -70,7 +70,7 @@ class AntergosAlerts:
 
         self.alert_ids = self.alerts.keys()
 
-    def run(self):
+    def run(self) -> None:
         """ Runs program """
         self.setup_gettext()
 
@@ -81,7 +81,7 @@ class AntergosAlerts:
             self.save_completed_alerts()
 
     @staticmethod
-    def setup_gettext()-> None:
+    def setup_gettext() -> None:
         """ Initialize gettext for string translations """
         try:
             gettext.textdomain(AntergosAlerts.APP_NAME)
@@ -204,7 +204,7 @@ class AntergosAlerts:
 
             self.completed_alert_ids.append(alert_id)
 
-    def save_completed_alerts(self):
+    def save_completed_alerts(self) -> None:
         """ Store already shown alerts """
         try:
             with open(AntergosAlerts.COMPLETED_JSON, 'w') as json_data:
