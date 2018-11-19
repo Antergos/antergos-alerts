@@ -31,7 +31,7 @@ import locale
 from termcolor import colored, cprint
 
 
-class AntergosAlerts(object):
+class AntergosAlerts:
     """ Manages antergos alerts """
     APP_NAME = 'ANTERGOS_NOTIFY'
     LOCALE_DIR = '/usr/share/locale'
