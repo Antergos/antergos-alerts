@@ -1,5 +1,4 @@
-#!/bin/python
-#
+#!/bin/env python
 #
 # antergos-alerts.py
 #
