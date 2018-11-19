@@ -1,5 +1,4 @@
-#!/bin/python
-# -*- coding: utf-8 -*-
+#!/bin/env python
 #
 # antergos-alerts.py
 #
@@ -32,7 +31,7 @@ import locale
 from termcolor import colored, cprint
 
 
-class AntergosAlerts(object):
+class AntergosAlerts:
     """ Manages antergos alerts """
     APP_NAME = 'ANTERGOS_NOTIFY'
     LOCALE_DIR = '/usr/share/locale'
@@ -71,7 +70,7 @@ class AntergosAlerts(object):
 
         self.alert_ids = self.alerts.keys()
 
-    def run(self):
+    def run(self) -> None:
         """ Runs program """
         self.setup_gettext()
 
@@ -82,7 +81,7 @@ class AntergosAlerts(object):
             self.save_completed_alerts()
 
     @staticmethod
-    def setup_gettext()-> None:
+    def setup_gettext() -> None:
         """ Initialize gettext for string translations """
         try:
             gettext.textdomain(AntergosAlerts.APP_NAME)
@@ -205,7 +204,7 @@ class AntergosAlerts(object):
 
             self.completed_alert_ids.append(alert_id)
 
-    def save_completed_alerts(self):
+    def save_completed_alerts(self) -> None:
         """ Store already shown alerts """
         try:
             with open(AntergosAlerts.COMPLETED_JSON, 'w') as json_data:
